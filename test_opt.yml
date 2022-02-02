@@ -1,0 +1,28 @@
+name: SmartText
+model_type: RoE
+gpu_ids: [0]
+cuda: True
+batch_size: 1
+num_workers: 0
+dataset_name: SMT
+visimp_model: ./pretrained/gdi-basnet.pth
+smt_model: ./pretrained/SMT.pth
+input_dir: ./test_data/SMT/
+usr_slogan: "ICME 2020\n6-10 July, London"
+ratio_list: [1, 0.8] # ratio of the text lines
+res_dir: ./test_result/SMT/
+font_fp: ./test_data/Fonts/verdanab.ttf
+candi_res: 3 # number of the output candidates
+
+exp_prop: 6 # expanding coefficient of the text region
+is_devi: False
+text_spacing: 20
+grid_num: 120
+sali_coef: 2.6 # the larger sali_coef, the smaller area defined as important of the image
+max_text_area_coef: 17
+min_text_area_coef: 7
+min_font_size: 10
+max_font_size: 500
+font_inc_unit: 5
+
+contrast_threshold: 5
